@@ -358,7 +358,7 @@ const encodeEthSend = (data) => {
     .filter((item) => !!item)
     .join('&')
 
-  return `ethereum:${to}?${paramsStr}`
+  return `${to}?${paramsStr}`
 }
 
 export const encodeEthereumUri = (data) => {
@@ -399,10 +399,6 @@ const decodeEthSend = (encodedStr) => {
   }
 
   const result = {}
-
-  if (!encodedStr || encodedStr.substr(0, 9) !== 'ethereum:') {
-    return false
-  }
 
   if (encodedStr.length >= 51 && isValidAddress(encodedStr.substr(9, 42))) {
     result.to = encodedStr.substr(9, 42)

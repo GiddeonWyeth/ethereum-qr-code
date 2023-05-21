@@ -101,7 +101,7 @@ A method to convert the EIP67 string back to the JSON object.
 Example:
 ```javascript
 const paymentParams = qr.readStringToJSON(
-  'ethereum:0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8[?gas=4200][?value=150]',
+  '0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8[?gas=4200][?value=150]',
 )
 
 console.log(paymentParams) //>

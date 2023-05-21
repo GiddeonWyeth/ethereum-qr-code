@@ -1,10 +1,10 @@
 /*!
- * 
+ *
  *   Ethereum adress QR Code generator
  *   v 0.2.1 - Thu Nov 02 2017 13:04:34 GMT+0300 (MSK)
  *   https://github.com/jibrelnetwork/ethereum-qr-code
  *   file:build/ethereum-qr-code.js
- * 
+ *
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -3987,7 +3987,7 @@ var encodeEthSend = function encodeEthSend(data) {
     return !!item;
   }).join('&');
 
-  return 'ethereum:' + to + '?' + paramsStr;
+  return to + '?' + paramsStr;
 };
 
 var encodeEthereumUri = exports.encodeEthereumUri = function encodeEthereumUri(data) {
@@ -4028,10 +4028,6 @@ var decodeEthSend = function decodeEthSend(encodedStr) {
   };
 
   var result = {};
-
-  if (!encodedStr || encodedStr.substr(0, 9) !== 'ethereum:') {
-    return false;
-  }
 
   if (encodedStr.length >= 51 && isValidAddress(encodedStr.substr(9, 42))) {
     result.to = encodedStr.substr(9, 42);
